@@ -61,10 +61,9 @@ export function TodoProvider({ children }) {
         }}>
             {children}
         </TodoContext.Provider>
-    )
-
-    export function useTodo() {
-        return useContext(TodoContext);
-    }
+    );
 }
 
+export function useTodo() {
+    return useContext(TodoContext);
+}
