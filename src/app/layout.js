@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { TodoProvider } from "./context/TodoContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +19,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <TodoProvider>
+          <main className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+            <div className="relative py-3 sm:max-w-xl sm:mx-auto">
+              <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-10">
+                <div className="max-w-md mx-auto">
+                  {children}
+                </div>
+              </div>
+            </div>
+          </main> 
+        </TodoProvider>
       </body>
     </html>
   );
