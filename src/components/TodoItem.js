@@ -6,7 +6,7 @@ import { useTodo } from '../context/TodoContext';
 
 export default function TodoItem({ todo }) {
     const { toggleComplete, deleteTodo } = useTodo();
-    const [isDeleteing, setIsDeleteing] = useState(false);
+    const [isDeleting, setIsDeleteing] = useState(false);
 
     const handleDelete = () => {
         if (isDeleting) {

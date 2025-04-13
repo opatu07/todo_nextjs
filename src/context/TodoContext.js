@@ -46,6 +46,12 @@ export function TodoProvider({ children }) {
         ));
     };
 
+    const toggleComplete = (id) => {
+        setTodos(todos.map(todo => 
+            todo.id === id ? { ...todo, completed: !todo.completed } : todo
+        ));
+    };
+
     const getTodoById = (id) => {
         return todos.find(todo => todo.id === id);
     };
